@@ -104,7 +104,7 @@ class Docker {
     if (!existsSync(githubHome)) mkdirSync(githubHome);
 
     return `docker run \
-            --workdir c:${dockerWorkspacePath} \
+            --workdir ${dockerWorkspacePath} \
             --rm \
             ${ImageEnvironmentFactory.getEnvVarString(parameters)} \
             --env GITHUB_WORKSPACE=c:${dockerWorkspacePath} \
